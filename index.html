@@ -3,176 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Name | تسوقي أحدث الصيحات</title>
-    <meta name="description" content="وصف قصير لتطبيقك بأسلوب شي إن">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-
+    <title>اسم التطبيق | تسوقي الأحدث</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --primary: #000000;
-            --accent: #fa6338; /* Shein-style orange/red accent */
-            --bg-light: #f7f7f7;
-            --text-main: #222222;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #ffffff;
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- Header --- */
-        header {
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            background: #fff;
-            z-index: 1000;
-        }
-
-        .logo { font-weight: 900; font-size: 1.5rem; letter-spacing: 1px; }
-
-        /* --- Hero Section --- */
-        .hero {
-            text-align: center;
-            padding: 60px 5%;
-            background: var(--bg-light);
-        }
-
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 900; }
-        .hero p { color: #666; margin-bottom: 30px; font-size: 1.1rem; }
-
-        .cta-button {
-            background: var(--primary);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 2px;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .cta-button:hover { opacity: 0.8; }
-
-        /* --- App Preview (Shein Style Grid) --- */
-        .preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 50px 5%;
-        }
-
-        .card {
-            background: #fff;
-            border: 1px solid #f0f0f0;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-            background: #eee; /* Placeholder */
-            aspect-ratio: 3/4;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .card h3 { font-size: 1rem; margin-bottom: 5px; }
-        .price { color: var(--accent); font-weight: bold; }
-
-        /* --- Features --- */
-        .features {
-            background: #000;
-            color: #fff;
-            padding: 40px 5%;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-
-        .feat-item { padding: 20px; flex: 1; min-width: 200px; }
-        .feat-item h4 { margin-bottom: 10px; font-size: 0.9rem; text-transform: uppercase; }
-
-        /* --- Footer --- */
-        footer {
-            padding: 40px 5%;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #888;
-            border-top: 1px solid #eee;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .preview-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-        }
+        body { font-family: 'Cairo', sans-serif; }
+        .shein-gradient { background: linear-gradient(135deg, #000000 0%, #333333 100%); }
     </style>
 </head>
-<body>
+<body class="bg-white text-gray-900">
 
-    <header>
-        <div class="logo">BRAND NAME</div>
-        <nav>
-            <a href="#" style="text-decoration:none; color:black; font-weight:bold;">تحميل التطبيق</a>
-        </nav>
-    </header>
+    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold tracking-tighter">LOGO</div>
+        <a href="#download" class="bg-black text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-gray-800 transition">حمل التطبيق</a>
+    </nav>
 
-    <section class="hero">
-        <h1>أحدث صيحات الموضة في متناول يدك</h1>
-        <p>انضمي إلى أكثر من مليون مستخدم واستمتعي بخصم 15% على طلبك الأول</p>
-        <a href="#" class="cta-button">تسوقي الآن</a>
-    </section>
+    <section class="relative px-6 pt-10 pb-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 text-right space-y-6">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                أحدث صيحات <br><span class="text-gray-400">الموضة في جيبك.</span>
+            </h1>
+            <p class="text-lg text-gray-600 max-w-md">
+                اكتشفي آلاف القطع الحصرية، عروض يومية، وتوصيل سريع حتى باب منزلك. تسوقي الآن بذكاء.
+            </p>
+            
+            <div id="download" class="flex flex-wrap gap-4 pt-4">
+                <a href="#" class="bg-black text-white flex items-center px-6 py-3 rounded-xl hover:opacity-80 transition">
+                    <div class="mr-3 text-right">
+                        <div class="text-xs">حمله من</div>
+                        <div class="text-lg font-semibold">App Store</div>
+                    </div>
+                </a>
+                <a href="#" class="border-2 border-black flex items-center px-6 py-3 rounded-xl hover:bg-gray-50 transition">
+                    <div class="mr-3 text-right">
+                        <div class="text-xs">متوفر على</div>
+                        <div class="text-lg font-semibold">Google Play</div>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-    <div class="preview-grid">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400?text=App+Screen+1" alt="Screen 1">
-            <h3>فساتين السهرة</h3>
-            <p class="price">تبدأ من 99 ر.س</p>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400?text=App+Screen+2" alt="Screen 2">
-            <h3>مجموعة الخريف</h3>
-            <p class="price">خصم يصل إلى 50%</p>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400?text=App+Screen+3" alt="Screen 3">
-            <h3>إكسسوارات</h3>
-            <p class="price">جديدنا اليوم</p>
-        </div>
-    </div>
-
-    <section class="features">
-        <div class="feat-item">
-            <h4>توصيل سريع</h4>
-            <p>خلال 3-5 أيام عمل</p>
-        </div>
-        <div class="feat-item">
-            <h4>دفع آمن</h4>
-            <p>خيارات دفع متعددة ومدفوعة</p>
-        </div>
-        <div class="feat-item">
-            <h4>إرجاع سهل</h4>
-            <p>خلال 15 يوماً من الاستلام</p>
+        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center relative">
+            <div class="w-64 h-[500px] bg-gray-200 rounded-[3rem] border-[8px] border-black overflow-hidden shadow-2xl">
+                <img src="https://via.placeholder.com/400x800" alt="App Screenshot" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -z-10 w-72 h-72 bg-gray-100 rounded-full blur-3xl top-10"></div>
         </div>
     </section>
 
-    <footer>
-        <p>© 2024 اسم تطبيقك. جميع الحقوق محفوظة.</p>
+    <section class="bg-gray-50 py-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div class="space-y-4">
+                <div class="text-3xl">🚚</div>
+                <h3 class="font-bold text-xl">توصيل سريع</h3>
+                <p class="text-gray-500">نصل إليك في غضون ٢-٤ أيام عمل في جميع أنحاء المملكة.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="text-3xl">💳</div>
+                <h3 class="font-bold text-xl">دفع آمن</h3>
+                <p class="text-gray-500">خيارات دفع متعددة: تابي، تمارا، أو الدفع عند الاستلام.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="text-3xl">✨</div>
+                <h3 class="font-bold text-xl">جودة مضمونة</h3>
+                <p class="text-gray-500">نختار أفضل الخامات لنضمن لك إطلالة رائعة وراحة تدوم.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-gray-100">
+        <p class="text-gray-400 text-sm">© 2024 اسم شركتك. جميع الحقوق محفوظة.</p>
     </footer>
 
 </body>
