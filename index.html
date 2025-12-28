@@ -3,76 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اسم التطبيق | تسوقي الأحدث</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>براند - عالم الموضة في متناول يدك</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Cairo', sans-serif; }
-        .shein-gradient { background: linear-gradient(135deg, #000000 0%, #333333 100%); }
+        body { font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #000, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 overflow-x-hidden">
 
-    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
-        <div class="text-2xl font-bold tracking-tighter">LOGO</div>
-        <a href="#download" class="bg-black text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-gray-800 transition">حمل التطبيق</a>
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+        <div class="flex justify-between items-center p-5 max-w-7xl mx-auto">
+            <div class="text-3xl font-extrabold tracking-tighter">BRAND</div>
+            <a href="#download" class="bg-black text-white px-8 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform active:scale-95 shadow-lg">حملي الآن</a>
+        </div>
     </nav>
 
-    <section class="relative px-6 pt-10 pb-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 text-right space-y-6">
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-                أحدث صيحات <br><span class="text-gray-400">الموضة في جيبك.</span>
+    <section class="relative px-6 pt-16 pb-24 max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 text-right space-y-8 z-10">
+            <span class="bg-gray-100 text-black px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">موضة 2025</span>
+            <h1 class="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight">
+                تألقي <br><span class="gradient-text">بكل ثقة.</span>
             </h1>
-            <p class="text-lg text-gray-600 max-w-md">
-                اكتشفي آلاف القطع الحصرية، عروض يومية، وتوصيل سريع حتى باب منزلك. تسوقي الآن بذكاء.
+            <p class="text-xl text-gray-500 max-w-lg leading-relaxed">
+                أكثر من ١٠,٠٠٠ قطعة مختارة بعناية لتناسب ذوقك الرفيع. ابدأي تجربة تسوق فريدة مع خصم ٢٠٪ على أول طلب من التطبيق.
             </p>
             
-            <div id="download" class="flex flex-wrap gap-4 pt-4">
-                <a href="#" class="bg-black text-white flex items-center px-6 py-3 rounded-xl hover:opacity-80 transition">
-                    <div class="mr-3 text-right">
-                        <div class="text-xs">حمله من</div>
-                        <div class="text-lg font-semibold">App Store</div>
+            <div id="download" class="flex flex-wrap gap-4 pt-6">
+                <a href="#" class="bg-black text-white flex items-center px-8 py-4 rounded-2xl hover:bg-gray-800 transition-all shadow-xl group">
+                    <div class="text-right">
+                        <div class="text-[10px] opacity-70">متوفر في</div>
+                        <div class="text-xl font-bold">App Store</div>
                     </div>
-                </a>
-                <a href="#" class="border-2 border-black flex items-center px-6 py-3 rounded-xl hover:bg-gray-50 transition">
-                    <div class="mr-3 text-right">
-                        <div class="text-xs">متوفر على</div>
-                        <div class="text-lg font-semibold">Google Play</div>
-                    </div>
+                    <svg class="w-8 h-8 mr-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05 1.72-3.21 1.72-1.13 0-1.48-.71-2.82-.71-1.37 0-1.76.71-2.82.71-1.14 0-2.31-.86-3.23-1.72-2.59-2.5-3.08-7.14-1.29-9.92 1.05-1.63 2.72-2.63 4.45-2.63 1.14 0 2.01.41 2.82.41.76 0 1.9-.51 3.23-.51 1.4 0 2.85.71 3.75 1.95-2.91 1.5-2.43 5.4.45 6.7-.75 1.83-2.14 3.99-1.43 4zM12.03 6.3c-.02-2.22 1.83-4.14 4.02-4.14.05 2.13-1.89 4.14-4.02 4.14z"/></svg>
                 </a>
             </div>
         </div>
 
-        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center relative">
-            <div class="w-64 h-[500px] bg-gray-200 rounded-[3rem] border-[8px] border-black overflow-hidden shadow-2xl">
-                <img src="https://via.placeholder.com/400x800" alt="App Screenshot" class="w-full h-full object-cover">
+        <div class="md:w-1/2 mt-16 md:mt-0 flex justify-center relative">
+            <div class="animate-float relative z-10 w-72 h-[580px] bg-white rounded-[3rem] border-[12px] border-black overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)]">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400&h=800" alt="Fashion App" class="w-full h-full object-cover">
             </div>
-            <div class="absolute -z-10 w-72 h-72 bg-gray-100 rounded-full blur-3xl top-10"></div>
+            <div class="absolute -z-0 w-[400px] h-[400px] bg-yellow-100 rounded-full blur-[100px] opacity-50"></div>
         </div>
     </section>
 
-    <section class="bg-gray-50 py-20 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div class="space-y-4">
-                <div class="text-3xl">🚚</div>
-                <h3 class="font-bold text-xl">توصيل سريع</h3>
-                <p class="text-gray-500">نصل إليك في غضون ٢-٤ أيام عمل في جميع أنحاء المملكة.</p>
+    <section class="border-y border-gray-100 py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold">+500K</div>
+                <div class="text-gray-400 text-sm">تحميل</div>
             </div>
-            <div class="space-y-4">
-                <div class="text-3xl">💳</div>
-                <h3 class="font-bold text-xl">دفع آمن</h3>
-                <p class="text-gray-500">خيارات دفع متعددة: تابي، تمارا، أو الدفع عند الاستلام.</p>
+            <div>
+                <div class="text-4xl font-bold">4.9/5</div>
+                <div class="text-gray-400 text-sm">تقييم المتجر</div>
             </div>
-            <div class="space-y-4">
-                <div class="text-3xl">✨</div>
-                <h3 class="font-bold text-xl">جودة مضمونة</h3>
-                <p class="text-gray-500">نختار أفضل الخامات لنضمن لك إطلالة رائعة وراحة تدوم.</p>
+            <div>
+                <div class="text-4xl font-bold">100%</div>
+                <div class="text-gray-400 text-sm">أصلي</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold">24/7</div>
+                <div class="text-gray-400 text-sm">دعم فني</div>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center border-t border-gray-100">
-        <p class="text-gray-400 text-sm">© 2024 اسم شركتك. جميع الحقوق محفوظة.</p>
+    <section class="py-24 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div class="group hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-16 h-16 bg-white shadow-sm flex items-center justify-center rounded-2xl mb-6 text-3xl">🚚</div>
+                <h3 class="font-bold text-2xl mb-4">شحن سريع ومجاني</h3>
+                <p class="text-gray-500 leading-relaxed">استمتعي بشحن مجاني للطلبات فوق ٢٠٠ ريال، وتوصيل خلال ٤٨ ساعة في المدن الرئيسية.</p>
+            </div>
+            <div class="group hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-16 h-16 bg-white shadow-sm flex items-center justify-center rounded-2xl mb-6 text-3xl">🔄</div>
+                <h3 class="font-bold text-2xl mb-4">إرجاع سهل</h3>
+                <p class="text-gray-500 leading-relaxed">لم يعجبك المقاس؟ لا تقلقي، نوفر خدمة الاسترجاع المجاني خلال ١٤ يوماً من استلام الطلب.</p>
+            </div>
+            <div class="group hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-16 h-16 bg-white shadow-sm flex items-center justify-center rounded-2xl mb-6 text-3xl">🔒</div>
+                <h3 class="font-bold text-2xl mb-4">دفع آمن</h3>
+                <p class="text-gray-500 leading-relaxed">ندعم كافة وسائل الدفع الآمنة، مع إمكانية التقسيط عبر تابي وتمارا بدون فوائد.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 text-center bg-white border-t border-gray-100">
+        <div class="mb-8 font-bold text-2xl">BRAND</div>
+        <div class="flex justify-center gap-6 mb-8 text-gray-400">
+            <a href="#" class="hover:text-black">إنستغرام</a>
+            <a href="#" class="hover:text-black">تيك توك</a>
+            <a href="#" class="hover:text-black">تويتر</a>
+        </div>
+        <p class="text-gray-400 text-sm">© 2025 جميع الحقوق محفوظة لشركة الموضة العصرية.</p>
     </footer>
 
 </body>
