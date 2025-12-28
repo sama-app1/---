@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسم تطبيقك - الحل الأمثل لحياتك اليومية</title>
+    <meta name="description" content="وصف قصير لتطبيقك يساعد في ظهورك في نتائج بحث جوجل">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #50E3C2;
+            --text-dark: #333;
+            --bg-light: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        p.subtitle { font-size: 1.2rem; opacity: 0.9; }
+
+        .cta-buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .app-screenshot {
+            margin-top: 50px;
+        }
+
+        .app-screenshot img {
+            max-width: 300px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .feature-box h3 { color: var(--primary-color); }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>اسم تطبيقك هنا</h1>
+            <p class="subtitle">اكتب هنا جملة تسويقية تشرح الفائدة الرئيسية من تطبيقك بشكل مختصر وجذاب.</p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn">تحميل من App Store</a>
+                <a href="#" class="btn">تحميل من Google Play</a>
+            </div>
+
+            <div class="app-screenshot">
+                <img src="https://via.placeholder.com/300x600?text=App+Screenshot" alt="واجهة التطبيق">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="features">
+            <div class="feature-box">
+                <h3>سهولة الاستخدام</h3>
+                <p>تصميم بسيط وسلس يضمن لك الوصول لما تريد بضغطة واحدة.</p>
+            </div>
+            <div class="feature-box">
+                <h3>سرعة فائقة</h3>
+                <p>تم تحسين التطبيق ليعمل بأعلى كفاءة وأقل استهلاك للبيانات.</p>
+            </div>
+            <div class="feature-box">
+                <h3>أمان تام</h3>
+                <p>بياناتك في أمان تام بفضل أحدث تقنيات التشفير العالمية.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024 - اسم تطبيقك</p>
+    </footer>
+
+</body>
+</html>
