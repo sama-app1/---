@@ -1,79 +1,50 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اسم التطبيق | تسوقي الأحدث</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Guess the Number</title>
     <style>
-        body { font-family: 'Cairo', sans-serif; }
-        .shein-gradient { background: linear-gradient(135deg, #000000 0%, #333333 100%); }
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #f0f2f5; margin: 0; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
+        input { padding: 10px; border: 2px solid #ddd; border-radius: 6px; width: 60px; font-size: 1.2rem; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; margin-top: 10px; }
+        button:hover { background: #0056b3; }
+        #message { margin-top: 20px; font-weight: bold; height: 1.2rem; }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body>
 
-    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
-        <div class="text-2xl font-bold tracking-tighter">LOGO</div>
-        <a href="#download" class="bg-black text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-gray-800 transition">حمل التطبيق</a>
-    </nav>
+<div class="card">
+    <h1>Guess the Number!</h1>
+    <p>I'm thinking of a number between 1 and 100.</p>
+    <input type="number" id="guessInput" placeholder="??">
+    <br>
+    <button onclick="checkGuess()">Submit Guess</button>
+    <div id="message"></div>
+</div>
 
-    <section class="relative px-6 pt-10 pb-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 text-right space-y-6">
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-                أحدث صيحات <br><span class="text-gray-400">الموضة في جيبك.</span>
-            </h1>
-            <p class="text-lg text-gray-600 max-w-md">
-                اكتشفي آلاف القطع الحصرية، عروض يومية، وتوصيل سريع حتى باب منزلك. تسوقي الآن بذكاء.
-            </p>
-            
-            <div id="download" class="flex flex-wrap gap-4 pt-4">
-                <a href="#" class="bg-black text-white flex items-center px-6 py-3 rounded-xl hover:opacity-80 transition">
-                    <div class="mr-3 text-right">
-                        <div class="text-xs">حمله من</div>
-                        <div class="text-lg font-semibold">App Store</div>
-                    </div>
-                </a>
-                <a href="#" class="border-2 border-black flex items-center px-6 py-3 rounded-xl hover:bg-gray-50 transition">
-                    <div class="mr-3 text-right">
-                        <div class="text-xs">متوفر على</div>
-                        <div class="text-lg font-semibold">Google Play</div>
-                    </div>
-                </a>
-            </div>
-        </div>
+<script>
+    const targetNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
 
-        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center relative">
-            <div class="w-64 h-[500px] bg-gray-200 rounded-[3rem] border-[8px] border-black overflow-hidden shadow-2xl">
-                <img src="https://via.placeholder.com/400x800" alt="App Screenshot" class="w-full h-full object-cover">
-            </div>
-            <div class="absolute -z-10 w-72 h-72 bg-gray-100 rounded-full blur-3xl top-10"></div>
-        </div>
-    </section>
+    function checkGuess() {
+        const userGuess = document.getElementById('guessInput').value;
+        const message = document.getElementById('message');
+        attempts++;
 
-    <section class="bg-gray-50 py-20 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div class="space-y-4">
-                <div class="text-3xl">🚚</div>
-                <h3 class="font-bold text-xl">توصيل سريع</h3>
-                <p class="text-gray-500">نصل إليك في غضون ٢-٤ أيام عمل في جميع أنحاء المملكة.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="text-3xl">💳</div>
-                <h3 class="font-bold text-xl">دفع آمن</h3>
-                <p class="text-gray-500">خيارات دفع متعددة: تابي، تمارا، أو الدفع عند الاستلام.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="text-3xl">✨</div>
-                <h3 class="font-bold text-xl">جودة مضمونة</h3>
-                <p class="text-gray-500">نختار أفضل الخامات لنضمن لك إطلالة رائعة وراحة تدوم.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-10 text-center border-t border-gray-100">
-        <p class="text-gray-400 text-sm">© 2024 اسم شركتك. جميع الحقوق محفوظة.</p>
-    </footer>
+        if (userGuess == targetNumber) {
+            message.style.color = "green";
+            message.innerHTML = `🎉 Correct! It took you ${attempts} tries.`;
+        } else if (userGuess < targetNumber) {
+            message.style.color = "orange";
+            message.innerHTML = "Too low! Try again.";
+        } else {
+            message.style.color = "red";
+            message.innerHTML = "Too high! Try again.";
+        }
+    }
+</script>
 
 </body>
 </html>
